@@ -1,0 +1,392 @@
+:root {
+  --bg: #f2ede1;
+  --ink: #1a1a1a;
+  --maroon: #8f1d4b;
+  --border: #111;
+  --card-bg: #fff;
+  --max-width: 1100px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Assistant', 'Segoe UI', Tahoma, sans-serif;
+  line-height: 1.6;
+  direction: rtl;
+}
+
+h1,
+h2,
+h3,
+.page-title {
+  font-family: 'Frank Ruhl Libre', 'Assistant', serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page__content {
+  flex: 1;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px 64px;
+  width: 100%;
+}
+
+/* Header */
+.site-header {
+  position: relative;
+  text-align: center;
+  padding: 32px 24px 24px;
+  background: var(--bg);
+}
+
+.site-header__social {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  display: flex;
+  gap: 10px;
+}
+
+.site-header__brand img {
+  margin: 0 auto 8px;
+}
+
+.site-header__title {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 800;
+  margin: 8px 0;
+  letter-spacing: 0.02em;
+}
+
+.site-header__tagline {
+  color: #444;
+  margin: 0 0 20px;
+}
+
+.site-header__nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  margin: 0;
+  padding: 12px 0 0;
+  border-top: 2px solid var(--ink);
+  flex-wrap: wrap;
+}
+
+.site-header__nav a {
+  font-weight: 600;
+  padding: 4px 2px;
+  border-bottom: 2px solid transparent;
+}
+
+.site-header__nav a.active,
+.site-header__nav a:hover {
+  border-bottom-color: var(--maroon);
+  color: var(--maroon);
+}
+
+/* Home */
+.hero-gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 4px;
+  margin: 24px 0;
+}
+
+.hero-gallery img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+.cta-row {
+  display: flex;
+  justify-content: center;
+  margin: 32px 0;
+}
+
+.btn {
+  display: inline-block;
+  padding: 16px 40px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border: 2px solid var(--ink);
+  cursor: pointer;
+}
+
+.btn--dark {
+  background: var(--ink);
+  color: #fff;
+}
+
+.btn--dark:hover {
+  background: var(--maroon);
+  border-color: var(--maroon);
+}
+
+.intro-box {
+  border: 3px solid var(--ink);
+  padding: 32px;
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 32px;
+  background: var(--card-bg);
+}
+
+.intro-box p {
+  margin: 0 0 14px;
+}
+
+.thank-you {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 32px 0;
+}
+
+.hero-strip {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  margin-top: 40px;
+}
+
+/* Who am I */
+.whoami {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 32px;
+  align-items: start;
+  margin: 24px 0;
+}
+
+.whoami__portrait {
+  width: 100%;
+  height: auto;
+}
+
+.whoami__text h3 {
+  margin-top: 0;
+  font-size: 1.6rem;
+}
+
+.whoami__photo {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  margin: 24px 0;
+}
+
+.link-strong {
+  font-weight: 700;
+  color: var(--maroon);
+}
+
+.quote {
+  text-align: center;
+  font-style: italic;
+  margin: 40px auto;
+  max-width: 600px;
+}
+
+.quote cite {
+  display: block;
+  margin-top: 8px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+@media (max-width: 700px) {
+  .whoami {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Lectures */
+.page-title {
+  text-align: center;
+  font-size: 2rem;
+  margin: 24px 0;
+}
+
+.lectures-intro {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 32px;
+}
+
+.lecture-grid {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 0;
+  margin: 0 0 40px;
+}
+
+.lecture-card {
+  border: 3px solid var(--ink);
+  background: var(--card-bg);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.lecture-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.lecture-card span {
+  padding: 16px;
+  text-align: center;
+  font-weight: 700;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 800px) {
+  .lecture-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .lecture-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Contact */
+.contact-lead {
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.contact-form {
+  max-width: 480px;
+  margin: 0 auto 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #999;
+  font-family: inherit;
+  font-size: 1rem;
+  background: var(--card-bg);
+}
+
+.contact-form button {
+  margin-top: 6px;
+}
+
+.contact-form__success {
+  text-align: center;
+  color: var(--maroon);
+  font-weight: 600;
+}
+
+.contact-details {
+  text-align: center;
+  margin-top: 24px;
+}
+
+/* Book */
+.book-page {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 32px;
+  align-items: start;
+  margin: 24px 0;
+}
+
+.book-page__cover {
+  border: 3px solid var(--ink);
+  background: var(--ink);
+  color: #fff;
+  aspect-ratio: 3 / 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Frank Ruhl Libre', serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  padding: 16px;
+}
+
+.book-page__placeholder {
+  color: #666;
+  font-style: italic;
+}
+
+@media (max-width: 700px) {
+  .book-page {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Footer */
+.site-footer {
+  background: var(--ink);
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.site-footer a {
+  color: #fff;
+}
+
+.site-footer a:hover {
+  color: var(--maroon);
+}
