@@ -474,6 +474,103 @@ img {
   }
 }
 
+/* Book purchase */
+.book-purchase {
+  margin-top: 32px;
+  border: 3px solid var(--ink);
+  background: var(--card-bg);
+  padding: 24px;
+}
+
+.book-purchase__heading {
+  margin: 0 0 4px;
+  font-size: 1.2rem;
+}
+
+.book-purchase__price {
+  margin: 0 0 20px;
+  font-weight: 700;
+  color: var(--maroon);
+}
+
+.book-purchase__options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.book-purchase__option {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn--paypal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  width: 100%;
+  padding: 14px;
+  background: #ffc439;
+  border: 2px solid #111;
+  color: #111;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn--paypal strong {
+  font-size: 1.3rem;
+  color: #003087;
+  font-style: italic;
+}
+
+.btn--paypal:hover {
+  background: #f0b429;
+}
+
+.book-purchase__bit {
+  border: 2px solid var(--ink);
+  padding: 14px;
+  text-align: center;
+}
+
+.book-purchase__bit-label {
+  margin: 0 0 8px;
+  font-weight: 700;
+}
+
+.book-purchase__phone {
+  all: unset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 700;
+  direction: ltr;
+  padding: 8px 0;
+}
+
+.book-purchase__copy-hint {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--maroon);
+}
+
+.book-purchase__bit-note {
+  font-size: 0.85rem;
+  color: #555;
+  margin: 8px 0 0;
+}
+
+@media (max-width: 560px) {
+  .book-purchase__options {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Footer */
 .site-footer {
   background: var(--ink);

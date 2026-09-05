@@ -1,4 +1,5 @@
 import Seo, { SITE_URL } from '../components/Seo.jsx'
+import BookPurchase from '../components/BookPurchase.jsx'
 import bookFront from '../assets/images/book-front.png'
 import bookBack from '../assets/images/book-back.png'
 
@@ -80,12 +81,7 @@ export default function Book() {
             מדריך במוזיאונים מקראיים בארץ ובעולם ומייסד המוזיאון המקראי הנייד.
           </p>
 
-          <div className="book-page__buy">
-            <span className="book-page__price">84 ₪ כולל מע&quot;מ</span>
-            <a href="mailto:yehuda694@gmail.com?subject=הזמנת ספר" className="btn btn--dark">
-              להזמנת הספר
-            </a>
-          </div>
+          <BookPurchase />
         </div>
       </section>
     </>

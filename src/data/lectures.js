@@ -28,7 +28,6 @@ import l27 from '../assets/images/lect-27.jpg'
 import l28 from '../assets/images/lect-28.jpg'
 import l29 from '../assets/images/lect-29.gif'
 import l30 from '../assets/images/lect-30.jpg'
-import l31 from '../assets/images/lect-31.jpg'
 
 // Content ported 1:1 from the original Wix site (lectures page + each lecture's popup).
 // Edit titles / descriptions / add prices freely — this is the single source of truth.
@@ -272,12 +271,5 @@ export const lectures = [
     image: l30,
     description:
       'ההיסטוריון יובל נח הררי טוען שהדבר שבני אדם אוהבים יותר מכל לדבר עליו הוא רכילות! (קיצור תולדות האנושות, עמ\' 32) האם נוסחה זו תקפה במקרא, ואם כן, איפה, מתי, למה וכמה.',
-  },
-  {
-    slug: 'cross-bible-seminar-2',
-    title: 'סמינר חוצה מקרא',
-    image: l31,
-    description:
-      'כל מה שרציתם לדעת על חוק ומשפט במקרא ובעולם העתיק בהיבטים פיקנטים ומרתקים ובליווי מוצגים ייחודיים במינם.',
   },
 ]
