@@ -57,7 +57,7 @@ export default function Lectures() {
         ))}
       </ul>
 
-      <LectureModal lecture={active} onClose={() => setActive(null)} />
+      {active && <LectureModal lecture={active} onClose={() => setActive(null)} />}
     </>
   )
 }

@@ -431,29 +431,46 @@ img {
   margin: 24px 0;
 }
 
-.book-page__cover {
-  border: 3px solid var(--ink);
-  background: var(--ink);
-  color: #fff;
-  aspect-ratio: 3 / 4;
+.book-page__covers {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-family: 'Frank Ruhl Libre', serif;
-  font-weight: 700;
-  font-size: 1.3rem;
-  padding: 16px;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.book-page__placeholder {
-  color: #666;
-  font-style: italic;
+.book-page__cover-img {
+  width: 100%;
+  border: 3px solid var(--ink);
+}
+
+.book-page__subtitle {
+  font-weight: 600;
+  color: var(--maroon);
+}
+
+.book-page__highlight {
+  font-weight: 700;
+}
+
+.book-page__buy {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.book-page__price {
+  font-size: 1.2rem;
+  font-weight: 700;
 }
 
 @media (max-width: 700px) {
   .book-page {
     grid-template-columns: 1fr;
+  }
+
+  .book-page__covers {
+    flex-direction: row;
   }
 }
 
