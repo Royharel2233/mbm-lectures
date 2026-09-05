@@ -1,7 +1,11 @@
+import { useState } from 'react'
 import Seo, { SITE_URL } from '../components/Seo.jsx'
+import LectureModal from '../components/LectureModal.jsx'
 import { lectures } from '../data/lectures.js'
 
 export default function Lectures() {
+  const [active, setActive] = useState(null)
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
@@ -9,7 +13,11 @@ export default function Lectures() {
     itemListElement: lectures.map((l, i) => ({
       '@type': 'ListItem',
       position: i + 1,
-      name: l.title,
+      item: {
+        '@type': 'Event',
+        name: l.title,
+        description: l.description,
+      },
     })),
   }
 
@@ -36,11 +44,20 @@ export default function Lectures() {
       <ul className="lecture-grid">
         {lectures.map((lecture) => (
           <li key={lecture.slug} className="lecture-card">
-            <img src={lecture.image} alt={lecture.title} loading="lazy" />
-            <span>{lecture.title}</span>
+            <button
+              type="button"
+              className="lecture-card__button"
+              onClick={() => setActive(lecture)}
+              aria-haspopup="dialog"
+            >
+              <img src={lecture.image} alt={lecture.title} loading="lazy" />
+              <span>{lecture.title}</span>
+            </button>
           </li>
         ))}
       </ul>
+
+      <LectureModal lecture={active} onClose={() => setActive(null)} />
     </>
   )
 }
