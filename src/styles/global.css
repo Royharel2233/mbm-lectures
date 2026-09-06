@@ -341,18 +341,31 @@ img {
   color: var(--maroon);
 }
 
+.modal__images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.modal__figure {
+  margin: 0;
+  max-width: 260px;
+}
+
 .modal__image {
   max-width: 100%;
-  max-height: 320px;
+  max-height: 260px;
   object-fit: contain;
-  margin: 0 auto 12px;
+  margin: 0 auto;
 }
 
 .modal__caption {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: #555;
   font-style: italic;
-  margin: 0 0 16px;
+  margin: 6px 0 0;
 }
 
 .modal__title {

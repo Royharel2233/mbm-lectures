@@ -18,6 +18,16 @@ export default function LectureModal({ lecture, onClose }) {
 
   if (!lecture) return null
 
+  // modalImages, when present, is the authoritative set of images/captions for
+  // the popup (can be empty for text-only lectures). Otherwise fall back to
+  // the single grid thumbnail + its caption.
+  const images =
+    lecture.modalImages !== undefined
+      ? lecture.modalImages
+      : lecture.image
+        ? [{ src: lecture.image, caption: lecture.imageCaption }]
+        : []
+
   return (
     <div className="modal-overlay" onClick={onClose}>
       <div
@@ -37,9 +47,16 @@ export default function LectureModal({ lecture, onClose }) {
           ×
         </button>
 
-        <img className="modal__image" src={lecture.image} alt={lecture.title} />
-
-        {lecture.imageCaption && <p className="modal__caption">{lecture.imageCaption}</p>}
+        {images.length > 0 && (
+          <div className="modal__images">
+            {images.map((img, i) => (
+              <figure key={i} className="modal__figure">
+                <img className="modal__image" src={img.src} alt={lecture.title} />
+                {img.caption && <figcaption className="modal__caption">{img.caption}</figcaption>}
+              </figure>
+            ))}
+          </div>
+        )}
 
         <h3 id="lecture-modal-title" className="modal__title">
           {lecture.title}
